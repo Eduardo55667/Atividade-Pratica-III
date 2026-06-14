@@ -1,0 +1,439 @@
+/* ===================================================
+   👉 IMPORTANDO AS FONTES GEEK (GOOGLE FONTS)
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;800;900&display=swap');
+
+/* ===== parte geral do site ===== */
+
+html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Aplicando a fonte Inter para os textos gerais */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Aplicando a fonte Orbitron (Gamer/Futurista) para TODOS os títulos */
+h1, h2, h3, h4, h5, h6, strong {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* cor de fundo padrão (modo claro) + transição suave */
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.page-content {
+    flex: 1 0 auto;
+    min-height: calc(100vh - 90px);
+    width: 100%;
+    padding-left: 80px;
+    padding-bottom: 40px;
+}
+
+.site-footer {
+    flex-shrink: 0;
+    margin-top: 40px !important;
+    width: 100%;
+    padding-left: 80px !important;
+}
+
+.busca-page {
+    max-width: 1080px;
+}
+
+.busca-input-group .form-control {
+    min-width: 0;
+}
+
+.usuario-card {
+    gap: 16px;
+    min-height: 82px;
+}
+
+.usuario-info {
+    min-width: 0;
+}
+
+.usuario-info > div {
+    min-width: 0;
+}
+
+.usuario-info strong,
+.usuario-info .text-muted {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.usuario-acoes {
+    flex-shrink: 0;
+}
+
+
+/* ===== menu lateral (pc) ===== */
+
+.menu {
+    width: 80px;
+    height: 100vh;
+    background-color: #212529;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.menu i {
+    font-size: 24px;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* efeito quando passa o mouse */
+.menu i:hover {
+    color: #198754;
+}
+
+
+/* area principal e posts  */
+
+.conteudo {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+
+/* botoes  */
+
+.btnPerfil {
+    background-color: blue;
+    color: whitesmoke;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    padding: 3px 8px;
+    font-size: 12px;
+
+    border: none;
+    border-radius: 5px;
+}
+
+/* botao de publicar dentro do input */
+.btnPublicar {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    padding: 3px 10px;
+    font-size: 13px;
+
+    border: none;
+    background-color: #0d6efd;
+    color: white;
+
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif; /* Botão com fonte geek */
+    font-weight: 600;
+}
+
+/* efeito de clique nos botoes */
+.curtir:active, 
+.comentar:active {
+    transform: scale(0.95);
+}
+
+
+/* imagens  */
+
+/* foto do perfil principal */
+.foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* foto pequena dos posts */
+.fotopost {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* estrutura dos posts */
+
+.post {
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+
+    margin-bottom: 15px;
+    box-sizing: border-box;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Garante que o texto digitado ou dentro do parágrafo use a fonte Inter bem legível */
+.post p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* input dentro do post */
+.post input[type="text"] {
+    border: 1px solid black;
+    outline: none;
+    box-shadow: none;
+    font-family: 'Inter', sans-serif;
+}
+
+/* campo de comentario */
+.comentarioInput {
+    color: black;
+    border: 1px solid black;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* modo escuro  */
+
+body.dark {
+    background-color: #18191a !important; 
+    color: #e4e6eb !important;
+}
+
+body.dark .bg-white, 
+body.dark .card,
+body.dark .post, 
+body.dark .menu {
+    background-color: #242526 !important;
+    color: #e4e6eb !important;
+    border: none !important;
+}
+
+/* textos mais suaves no dark */
+body.dark .text-muted,
+body.dark .text-secondary {
+    color: #b0b3b8 !important;
+}
+
+/* inputs no dark */
+body.dark input,
+body.dark .bg-light {
+    background-color: #3a3b3c !important;
+    color: #e4e6eb !important;
+    border: none !important;
+}
+
+body.dark input::placeholder {
+    color: #b0b3b8 !important;
+}
+
+/* linhas */
+body.dark hr {
+    border-color: #3a3b3c !important;
+}
+
+/* botoes no dark */
+body.dark .btn-light {
+    background-color: transparent !important;
+    color: #b0b3b8 !important;
+}
+
+body.dark .btn-light:hover {
+    background-color: #3a3b3c !important;
+}
+
+
+/* ===================================================
+   MICROINTERAÇÕES (ANIMAÇÕES E HOVER)
+   =================================================== */
+
+/* Efeito de flutuação nos cards dos posts ao passar o mouse */
+.card.post, .post {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card.post:hover, .post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Upgrade de brilho neon no Modo Escuro ao passar o mouse */
+body.dark .card.post:hover, body.dark .post:hover {
+    box-shadow: 0 8px 25px rgba(0, 255, 120, 0.15) !important;
+}
+
+/* Animação de "pulo" (pop) no coração ao curtir */
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.bi-heart-fill.text-danger {
+    animation: heartPop 0.3s ease-in-out;
+    display: inline-block;
+}
+
+
+/* ===================================================
+   RESPONSIVIDADE (MOBILE-FIRST)
+   =================================================== */
+
+@media (max-width: 992px) {
+    
+    /* menu vira barra embaixo estilo App (Instagram/X) */
+    .menu {
+        position: fixed !important;
+        bottom: 0 !important;
+        top: auto !important;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background-color: #ffffff !important;
+        box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.08) !important;
+        border-top: 1px solid #dee2e6 !important;
+        padding: 0 !important;
+        z-index: 9999;
+        
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+    }
+
+    /* Cores da barra no modo escuro */
+    body.dark .menu {
+        background-color: #242526 !important;
+        border-top: 1px solid #3a3b3c !important;
+        box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .menu i {
+        margin: 0 !important;
+        font-size: 26px !important;
+        transition: transform 0.2s ease;
+    }
+
+    .menu i:active {
+        transform: scale(0.85);
+    }
+
+    /* espaço pro menu nao cobrir conteudo */
+    body {
+        padding-bottom: 90px !important; 
+    }
+
+    .page-content {
+        min-height: calc(100vh - 155px);
+        padding-left: 0;
+        padding-bottom: 24px;
+    }
+
+    .site-footer {
+        padding-left: 0 !important;
+        margin-bottom: 65px;
+    }
+
+    .busca-page {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .busca-form-card {
+        padding: 16px !important;
+    }
+
+    .busca-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .busca-input-group .form-control,
+    .busca-input-group .btn {
+        width: 100%;
+        border-radius: 6px !important;
+    }
+
+    .usuario-card {
+        align-items: stretch !important;
+        flex-direction: column !important;
+    }
+
+    .usuario-info {
+        width: 100%;
+    }
+
+    .usuario-acoes {
+        width: 100%;
+    }
+
+    .usuario-acoes .btn {
+        flex: 1;
+        min-height: 38px;
+        white-space: normal;
+    }
+
+    .conteudo {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    /* botao publicar adapta no mobile */
+    .btnPublicar {
+        position: relative;
+        transform: none;
+        right: auto;
+        top: auto;
+
+        margin-top: 10px;
+        width: 100%; 
+        padding: 8px;
+    }
+
+    /* garante que tudo fique dentro da tela */
+    .post,
+    .conteudo .card,
+    .post .comentarios input,
+    .post .comentarios button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .criar-post {
+        max-width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+}

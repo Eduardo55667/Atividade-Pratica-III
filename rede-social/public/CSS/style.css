@@ -1,0 +1,60 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+/* Configuração base */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-content {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.auth-content > section {
+    width: 100%;
+}
+
+.auth-footer {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Regras apenas para telas de celulares (menores que 768px) */
+@media (max-width: 767px) {
+    .vh-100 {
+        height: auto !important; /* Remove a trava de altura no celular */
+        min-height: 100vh;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .img-fluid {
+        max-width: 70%; /* Deixa a imagem um pouco menor no topo */
+        margin: 0 auto 2rem auto;
+        display: block;
+    }
+
+    .auth-content {
+        align-items: flex-start;
+    }
+}
